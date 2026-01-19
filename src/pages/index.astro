@@ -1,11 +1,55 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// Portfolio Landing Page - Main entry point
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Portfolio from "../components/Portfolio.astro";
+import Skills from "../components/Skills.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="FAUZAN | Backend Developer & Database Administrator">
+  <Navbar />
+
+  <main>
+    <Hero
+      name="FAUZAN"
+      title="Backend Developer"
+      subtitle="& Database Administrator"
+    />
+
+    <About
+      description="Saya adalah seorang backend developer yang passionate dalam membangun sistem yang robust dan scalable. Dengan fokus pada arsitektur database dan optimasi performa, saya mengubah kebutuhan kompleks menjadi solusi data yang efisien dan reliable."
+    />
+
+    <Portfolio />
+
+    <Skills />
+
+    <Contact />
+  </main>
+
+  <Footer />
 </Layout>
+
+<style is:global>
+  /* Page-specific global styles */
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Intersection Observer Animation Trigger */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>

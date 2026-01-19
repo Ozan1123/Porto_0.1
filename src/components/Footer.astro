@@ -1,0 +1,183 @@
+---
+// Footer Component - Simple minimalist footer
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-divider">
+      <svg viewBox="0 0 100 2" preserveAspectRatio="none">
+        <line
+          x1="0"
+          y1="1"
+          x2="100"
+          y2="1"
+          stroke="var(--silver)"
+          stroke-width="0.5"></line>
+      </svg>
+    </div>
+
+    <div class="footer-content">
+      <p class="footer-copyright">
+        © {currentYear}
+        <span class="footer-name">Muhammad Fauzan Pratama</span>. All Rights Reserved.
+      </p>
+
+      <!-- <p class="footer-credit">
+        Built with
+        <span class="heart">♥</span>
+        using
+        <a href="https://astro.build" target="_blank" rel="noopener noreferrer"
+          >Astro</a
+        >
+      </p>
+    </div> -->
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m18 15-6-6-6 6"></path>
+      </svg>
+    </button>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: var(--space-8) 0 var(--space-6);
+    background: var(--white);
+    position: relative;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-6);
+    position: relative;
+  }
+
+  .footer-divider {
+    margin-bottom: var(--space-6);
+  }
+
+  .footer-divider svg {
+    width: 100%;
+    height: 2px;
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+  }
+
+  .footer-copyright {
+    font-size: var(--text-sm);
+    color: var(--gray);
+  }
+
+  .footer-name {
+    font-weight: var(--font-semibold);
+    color: var(--night-blue);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-credit {
+    font-size: var(--text-xs);
+    color: var(--gray-light);
+  }
+
+  .footer-credit a {
+    color: var(--night-blue-light);
+    font-weight: var(--font-medium);
+  }
+
+  .footer-credit a:hover {
+    text-decoration: underline;
+  }
+
+  .heart {
+    color: #e74c3c;
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  /* Back to Top */
+  .back-to-top {
+    position: fixed;
+    bottom: var(--space-6);
+    right: var(--space-6);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--night-blue);
+    color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-lg);
+    z-index: var(--z-sticky);
+  }
+
+  .back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    background: var(--night-blue-light);
+    transform: translateY(-4px);
+  }
+
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: var(--space-4);
+      right: var(--space-4);
+    }
+  }
+</style>
+
+<script>
+  // Back to top functionality
+  const backToTop = document.getElementById("backToTop");
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop?.classList.add("visible");
+    } else {
+      backToTop?.classList.remove("visible");
+    }
+  });
+
+  backToTop?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
