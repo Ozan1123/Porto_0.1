@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = "FAUZAN | Backend Developer & Database Administrator",
-  description = "Portfolio website showcasing backend development and database administration projects",
+  title = "M. Fauzan Pratama | Backend Developer & Database Enthusiast",
+  description = "Portfolio website showcasing backend development and database projects by Muhammad Fauzan Pratama",
 } = Astro.props;
 ---
 
@@ -36,3 +36,32 @@ const {
 <style is:global>
   @import "../styles/global.css";
 </style>
+
+<script>
+  // Scroll Reveal Animation using Intersection Observer
+  document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll(
+      ".reveal, .reveal-bottom, .reveal-left, .reveal-right, .reveal-scale",
+    );
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.15,
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          // Optional: stop observing after reveal
+          // revealObserver.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+  });
+</script>

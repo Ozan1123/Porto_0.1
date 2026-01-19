@@ -25,7 +25,7 @@ const tools = [
 <section id="skills" class="skills">
   <div class="skills-container">
     <!-- Section Header -->
-    <div class="section-header">
+    <div class="section-header reveal-bottom">
       <div class="section-label">
         <span class="label-line"></span>
         <span class="label-text">SKILLS & TOOLS</span>
@@ -35,7 +35,7 @@ const tools = [
     </div>
     
     <!-- Skills Grid -->
-    <div class="skills-grid">
+    <div class="skills-grid reveal-bottom reveal-delay-1">
       {skills.map((skill, index) => (
         <div class="skill-item" style={`animation-delay: ${index * 0.1}s`}>
           <div class="skill-circle">
@@ -132,7 +132,7 @@ const tools = [
     </div>
     
     <!-- Tools List -->
-    <div class="tools-section">
+    <div class="tools-section reveal-bottom reveal-delay-2">
       <h3 class="tools-title">Other Tools</h3>
       <div class="tools-list">
         {tools.map(tool => (

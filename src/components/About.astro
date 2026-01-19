@@ -1,112 +1,181 @@
 ---
-// About Component - Floating text sections with personal info
 interface Props {
   description?: string;
 }
 
 const {
-  description = "Saya adalah seorang developer yang passionate dalam menciptakan pengalaman digital yang seamless dan beautiful. Dengan fokus pada detail dan user experience, saya mengubah ide kompleks menjadi interface yang intuitif dan menarik."
+  description = "I am a passionate Backend Developer focused on building robust, scalable, and efficient systems. With expertise in server architecture and database optimization, I deliver powerful backend solutions while maintaining great user experience.",
 } = Astro.props;
 
 const keywords = [
-  { text: "CREATIVE", position: "left" },
-  { text: "DETAIL-ORIENTED", position: "right" },
-  { text: "PASSIONATE", position: "center" }
+  { text: "BACKEND", position: "left" },
+  { text: "DATABASE", position: "right" },
+  { text: "PROBLEM SOLVER", position: "center" },
 ];
 ---
 
 <section id="about" class="about">
   <div class="about-container">
     <!-- Section Label -->
-    <div class="section-label">
+    <div class="section-label reveal-bottom">
       <span class="label-line"></span>
       <span class="label-text">ABOUT ME</span>
       <span class="label-line"></span>
     </div>
-    
+
     <!-- Floating Keywords -->
     <div class="keywords-wrapper">
-      {keywords.map((keyword, index) => (
-        <span 
-          class={`keyword keyword-${keyword.position}`}
-          style={`animation-delay: ${index * 0.2}s`}
-        >
-          {keyword.text}
-        </span>
-      ))}
+      {
+        keywords.map((keyword, index) => (
+          <span
+            class={`keyword keyword-${keyword.position}`}
+            style={`animation-delay: ${index * 0.2}s`}
+          >
+            {keyword.text}
+          </span>
+        ))
+      }
     </div>
-    
+
     <!-- Main Content -->
     <div class="about-content">
-      <div class="about-visual">
+      <div class="about-visual reveal-left">
         <div class="visual-circle">
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10"/>
-            <path d="M12 16v-4"/>
-            <path d="M12 8h.01"/>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 16v-4"></path>
+            <path d="M12 8h.01"></path>
           </svg>
         </div>
         <!-- Decorative Lines -->
         <svg class="connecting-lines" viewBox="0 0 200 200">
-          <line x1="0" y1="100" x2="200" y2="100" stroke="var(--silver)" stroke-width="1" stroke-dasharray="4 4"/>
-          <line x1="100" y1="0" x2="100" y2="200" stroke="var(--silver)" stroke-width="1" stroke-dasharray="4 4"/>
+          <line
+            x1="0"
+            y1="100"
+            x2="200"
+            y2="100"
+            stroke="var(--silver)"
+            stroke-width="1"
+            stroke-dasharray="4 4"></line>
+          <line
+            x1="100"
+            y1="0"
+            x2="100"
+            y2="200"
+            stroke="var(--silver)"
+            stroke-width="1"
+            stroke-dasharray="4 4"></line>
         </svg>
       </div>
-      
-      <div class="about-text">
+
+      <div class="about-text reveal-right">
         <p class="description">{description}</p>
-        
+
         <div class="about-stats">
           <div class="stat">
-            <span class="stat-number">3+</span>
-            <span class="stat-label">Years Experience</span>
+            <span class="stat-number">RPL</span>
+            <span class="stat-label">Software Engineering</span>
           </div>
           <div class="stat">
-            <span class="stat-number">20+</span>
+            <span class="stat-number">10+</span>
             <span class="stat-label">Projects Completed</span>
           </div>
           <div class="stat">
-            <span class="stat-number">15+</span>
-            <span class="stat-label">Happy Clients</span>
+            <span class="stat-number">SMK</span>
+            <span class="stat-label">Pelita Nusantara</span>
           </div>
         </div>
       </div>
     </div>
-    
+
     <!-- Philosophy Section -->
     <div class="philosophy">
-      <div class="philosophy-item">
+      <div class="philosophy-item reveal-bottom reveal-delay-1">
         <div class="philosophy-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z"/>
+          <!-- Server Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+            <line x1="6" y1="6" x2="6.01" y2="6"></line>
+            <line x1="6" y1="18" x2="6.01" y2="18"></line>
           </svg>
         </div>
-        <h3>Design Philosophy</h3>
-        <p>Less is more. I believe in minimalist design that speaks volumes through simplicity.</p>
+        <h3>Backend Architecture</h3>
+        <p>
+          Building scalable, secure, and high-performance backend systems for
+          modern applications.
+        </p>
       </div>
-      
-      <div class="philosophy-item">
+
+      <div class="philosophy-item reveal-bottom reveal-delay-2">
         <div class="philosophy-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="16 18 22 12 16 6"/>
-            <polyline points="8 6 2 12 8 18"/>
+          <!-- Database Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
           </svg>
         </div>
-        <h3>Code Quality</h3>
-        <p>Clean, maintainable code is not just preference—it's responsibility.</p>
+        <h3>Database Optimization</h3>
+        <p>
+          Designing efficient database structures with query optimization for
+          maximum performance.
+        </p>
       </div>
-      
-      <div class="philosophy-item">
+
+      <div class="philosophy-item reveal-bottom reveal-delay-3">
         <div class="philosophy-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          <!-- UX Icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 20h9"></path>
+            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+            ></path>
           </svg>
         </div>
-        <h3>User First</h3>
-        <p>Every decision starts and ends with the user experience in mind.</p>
+        <h3>UX-Driven Development</h3>
+        <p>
+          Powerful backend systems while prioritizing seamless user experience.
+        </p>
       </div>
     </div>
   </div>
@@ -118,13 +187,13 @@ const keywords = [
     position: relative;
     background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
   }
-  
+
   .about-container {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 var(--space-6);
   }
-  
+
   /* Section Label */
   .section-label {
     display: flex;
@@ -133,27 +202,27 @@ const keywords = [
     gap: var(--space-4);
     margin-bottom: var(--space-16);
   }
-  
+
   .label-line {
     width: 60px;
     height: 1px;
     background: var(--silver);
   }
-  
+
   .label-text {
     font-size: var(--text-sm);
     font-weight: var(--font-semibold);
     color: var(--night-blue);
     letter-spacing: 0.2em;
   }
-  
+
   /* Floating Keywords */
   .keywords-wrapper {
     position: relative;
     height: 100px;
     margin-bottom: var(--space-12);
   }
-  
+
   .keyword {
     position: absolute;
     font-size: var(--text-sm);
@@ -163,23 +232,23 @@ const keywords = [
     opacity: 0;
     animation: fadeIn 0.6s ease forwards;
   }
-  
+
   .keyword-left {
     top: 0;
     left: 10%;
   }
-  
+
   .keyword-right {
     top: 20px;
     right: 15%;
   }
-  
+
   .keyword-center {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   /* Main Content */
   .about-content {
     display: grid;
@@ -188,13 +257,13 @@ const keywords = [
     align-items: start;
     margin-bottom: var(--space-16);
   }
-  
+
   .about-visual {
     position: relative;
     width: 120px;
     height: 120px;
   }
-  
+
   .visual-circle {
     width: 80px;
     height: 80px;
@@ -211,7 +280,7 @@ const keywords = [
     transform: translate(-50%, -50%);
     z-index: 1;
   }
-  
+
   .connecting-lines {
     position: absolute;
     width: 100%;
@@ -220,41 +289,41 @@ const keywords = [
     left: 0;
     opacity: 0.5;
   }
-  
+
   .about-text {
     max-width: 600px;
   }
-  
+
   .description {
     font-size: var(--text-lg);
     color: var(--gray);
     line-height: 1.8;
     margin-bottom: var(--space-8);
   }
-  
+
   /* Stats */
   .about-stats {
     display: flex;
     gap: var(--space-10);
   }
-  
+
   .stat {
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
   }
-  
+
   .stat-number {
     font-size: var(--text-3xl);
     font-weight: var(--font-bold);
     color: var(--night-blue);
   }
-  
+
   .stat-label {
     font-size: var(--text-sm);
     color: var(--gray-light);
   }
-  
+
   /* Philosophy */
   .philosophy {
     display: grid;
@@ -263,12 +332,12 @@ const keywords = [
     padding-top: var(--space-12);
     border-top: 1px solid var(--silver);
   }
-  
+
   .philosophy-item {
     text-align: center;
     padding: var(--space-6);
   }
-  
+
   .philosophy-icon {
     width: 56px;
     height: 56px;
@@ -282,46 +351,46 @@ const keywords = [
     margin: 0 auto var(--space-4);
     transition: all var(--transition-base);
   }
-  
+
   .philosophy-item:hover .philosophy-icon {
     background: var(--night-blue);
     color: var(--white);
     transform: scale(1.1);
   }
-  
+
   .philosophy-item h3 {
     font-size: var(--text-base);
     font-weight: var(--font-semibold);
     color: var(--night-blue);
     margin-bottom: var(--space-2);
   }
-  
+
   .philosophy-item p {
     font-size: var(--text-sm);
     color: var(--gray);
     line-height: 1.6;
   }
-  
+
   /* Responsive */
   @media (max-width: 768px) {
     .about-content {
       grid-template-columns: 1fr;
       text-align: center;
     }
-    
+
     .about-visual {
       margin: 0 auto;
     }
-    
+
     .about-stats {
       justify-content: center;
     }
-    
+
     .philosophy {
       grid-template-columns: 1fr;
       gap: var(--space-6);
     }
-    
+
     .keywords-wrapper {
       display: none;
     }

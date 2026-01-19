@@ -10,8 +10,16 @@ const email = "muhammadfauzanpratama420@gmail.com";
 
 const socialLinks: ContactLink[] = [
   { name: "GitHub", url: "https://github.com/Ozan1123", icon: "github" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/fauzan", icon: "linkedin" },
-  { name: "Instagram", url: "https://instagram.com/fauzan", icon: "instagram" },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/muhammad-fauzan-pratama-776468365",
+    icon: "linkedin",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/zan_2_you",
+    icon: "instagram",
+  },
 ];
 ---
 
@@ -26,7 +34,7 @@ const socialLinks: ContactLink[] = [
 
     <div class="contact-content">
       <!-- Section Header -->
-      <div class="section-header">
+      <div class="section-header reveal-bottom">
         <div class="section-label">
           <span class="label-line"></span>
           <span class="label-text">LET'S CONNECT</span>
@@ -40,7 +48,7 @@ const socialLinks: ContactLink[] = [
       </div>
 
       <!-- Email -->
-      <div class="contact-email">
+      <div class="contact-email reveal-left reveal-delay-1">
         <a href={`mailto:${email}`} class="email-link">
           <span class="email-icon">
             <svg
@@ -79,7 +87,7 @@ const socialLinks: ContactLink[] = [
       </div>
 
       <!-- Social Links -->
-      <div class="social-links">
+      <div class="social-links reveal-right reveal-delay-2">
         {
           socialLinks.map((link) => (
             <a
@@ -145,7 +153,7 @@ const socialLinks: ContactLink[] = [
       </div>
 
       <!-- CTA Button -->
-      <div class="contact-cta">
+      <div class="contact-cta reveal-bottom reveal-delay-3">
         <a href={`mailto:${email}`} class="btn btn-primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
