@@ -66,13 +66,13 @@ const {
         </a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
       </div>
-    </div>
-  </div>
 
-  <!-- Scroll Indicator -->
-  <div class="scroll-indicator">
-    <div class="scroll-line"></div>
-    <span>SCROLL DOWN</span>
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator animate-fade-in-up animate-delay-5">
+        <div class="scroll-line"></div>
+        <span>SCROLL DOWN</span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -97,7 +97,7 @@ const {
 
   .geo-circle {
     position: absolute;
-    border: 1px solid var(--silver);
+    border: 4px solid var(--silver);
     border-radius: 50%;
     opacity: 0.5;
   }
@@ -151,7 +151,7 @@ const {
 
   /* Hero Container */
   .hero-container {
-    max-width: 1200px;
+    max-width: 1300px;
     width: 100%;
     margin: 0 auto;
     padding: 0 var(--space-6);
@@ -280,23 +280,25 @@ const {
 
   /* Scroll Indicator */
   .scroll-indicator {
-    position: absolute;
-    bottom: var(--space-8);
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-3);
-    color: var(--gray-light);
+    gap: var(--space-2);
+    color: var(--gray);
     font-size: var(--text-xs);
     letter-spacing: 0.2em;
+    font-weight: var(--font-medium);
+    margin-top: var(--space-12);
+    opacity: 0;
+  }
+
+  .scroll-indicator span {
     animation: float 2s ease-in-out infinite;
   }
 
   .scroll-line {
     width: 1px;
-    height: 40px;
+    height: 30px;
     background: linear-gradient(to bottom, var(--night-blue), transparent);
   }
 
