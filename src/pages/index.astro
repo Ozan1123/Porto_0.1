@@ -1,5 +1,4 @@
 ---
-// Portfolio Landing Page - Main entry point
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
@@ -24,7 +23,7 @@ import Footer from "../components/Footer.astro";
     />
 
     <About
-      description="Saya adalah seorang backend developer yang passionate dalam membangun sistem yang robust dan scalable. Dengan fokus pada arsitektur database dan optimasi performa, saya mengubah kebutuhan kompleks menjadi solusi data yang efisien dan reliable."
+      description="I am a backend developer passionate about building robust and scalable systems. With a strong focus on database architecture and performance optimization, I turn complex requirements into efficient and reliable data solutions."
     />
 
     <Services />
@@ -44,13 +43,11 @@ import Footer from "../components/Footer.astro";
 </Layout>
 
 <style is:global>
-  /* Page-specific global styles */
   main {
     position: relative;
     z-index: 1;
   }
 
-  /* Intersection Observer Animation Trigger */
   .reveal {
     opacity: 0;
     transform: translateY(30px);

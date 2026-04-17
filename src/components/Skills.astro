@@ -22,7 +22,6 @@ const tools = [
 
 <section id="skills" class="skills">
   <div class="skills-container">
-    <!-- Section Header -->
     <div class="section-header reveal-bottom">
       <div class="section-label">
         <span class="label-line"></span>
@@ -32,7 +31,6 @@ const tools = [
       <p class="section-subtitle">Technologies I work with</p>
     </div>
     
-    <!-- Skills Grid -->
     <div class="skills-grid reveal-bottom reveal-delay-1">
       {skills.map((skill, index) => (
         <div class="skill-item" style={`animation-delay: ${index * 0.1}s`}>
@@ -114,7 +112,6 @@ const tools = [
               )}
             </div>
             
-            <!-- Level indicator -->
             <svg class="skill-progress" viewBox="0 0 100 100">
               <circle class="progress-bg" cx="50" cy="50" r="45"/>
               <circle 
@@ -129,7 +126,6 @@ const tools = [
       ))}
     </div>
     
-    <!-- Tools List -->
     <div class="tools-section reveal-bottom reveal-delay-2">
       <h3 class="tools-title">Other Tools</h3>
       <div class="tools-list">
@@ -153,7 +149,6 @@ const tools = [
     padding: 0 var(--space-6);
   }
   
-  /* Section Header */
   .section-header {
     text-align: center;
     margin-bottom: var(--space-12);
@@ -185,7 +180,6 @@ const tools = [
     color: var(--gray);
   }
   
-  /* Skills Grid */
   .skills-grid {
     display: flex;
     flex-wrap: wrap;
@@ -260,7 +254,6 @@ const tools = [
     color: var(--gray-dark);
   }
   
-  /* Tools Section */
   .tools-section {
     text-align: center;
     padding-top: var(--space-8);
@@ -299,7 +292,6 @@ const tools = [
     border-color: var(--night-blue);
   }
   
-  /* Responsive */
   @media (max-width: 600px) {
     .skills-grid {
       gap: var(--space-6);

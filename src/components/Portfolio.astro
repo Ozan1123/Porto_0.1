@@ -11,19 +11,19 @@ interface Project {
 const projects: Project[] = [
   {
     year: "2025",
-    title: "Aplikasi Absensi Tamu",
+    title: "Guest Attendance App",
     category: "Web Development",
     description:
-      "Sistem pencatatan tamu digital dengan fitur face recognition dan real-time monitoring. (Masih dalam pengembangan)",
+      "Digital guest registration system with face recognition and real-time monitoring. (Currently under development)",
       image: "/projects/absensi.png",
     link: "https://github.com/Ozan1123/tesxa.git",
   },
   {
     year: "2024",
-    title: "Simpel TodoList",
+    title: "Simple TodoList",
     category: "Web Development",
     description:
-      "Simpel TodoList with real-time updates and intuitive navigation.",
+      "Simple TodoList with real-time updates and intuitive navigation.",
     image: "/projects/todolist.png",
     link: "http://todolist-pink-nine.vercel.app/",
   },
@@ -42,7 +42,6 @@ const projects: Project[] = [
 
 <section id="work" class="portfolio">
   <div class="portfolio-container">
-    <!-- Section Header -->
     <div class="section-header reveal-bottom">
       <div class="section-label">
         <span class="label-line"></span>
@@ -52,7 +51,6 @@ const projects: Project[] = [
       <p class="section-subtitle">A collection of projects I'm proud of</p>
     </div>
 
-    <!-- Timeline -->
     <div class="timeline-wrapper reveal-bottom reveal-delay-1">
       <div class="timeline-line"></div>
 
@@ -134,7 +132,6 @@ const projects: Project[] = [
       </div>
     </div>
 
-    <!-- View More -->
     <div class="portfolio-footer reveal-bottom reveal-delay-2">
       <a href="#" class="btn btn-outline">
         <svg
@@ -172,7 +169,6 @@ const projects: Project[] = [
     padding: 0 var(--space-6);
   }
 
-  /* Section Header */
   .section-header {
     text-align: center;
     margin-bottom: var(--space-16);
@@ -204,7 +200,6 @@ const projects: Project[] = [
     color: var(--gray);
   }
 
-  /* Timeline */
   .timeline-wrapper {
     position: relative;
     padding: var(--space-8) 0;
@@ -232,7 +227,6 @@ const projects: Project[] = [
     gap: var(--space-12);
   }
 
-  /* Project Item */
   .project-item {
     display: grid;
     grid-template-columns: 1fr auto 1fr;
@@ -254,7 +248,6 @@ const projects: Project[] = [
     align-items: flex-end;
   }
 
-  /* Marker */
   .project-marker {
     display: flex;
     flex-direction: column;
@@ -284,7 +277,6 @@ const projects: Project[] = [
     color: var(--night-blue);
   }
 
-  /* Project Card */
   .project-card {
     display: flex;
     gap: var(--space-4);
@@ -366,13 +358,11 @@ const projects: Project[] = [
     gap: var(--space-3);
   }
 
-  /* Portfolio Footer */
   .portfolio-footer {
     text-align: center;
     margin-top: var(--space-12);
   }
 
-  /* Responsive */
   @media (max-width: 900px) {
     .timeline-line {
       left: 20px;

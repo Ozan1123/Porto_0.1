@@ -1,5 +1,4 @@
 ---
-// Contact Component - Minimal contact section with social links
 interface ContactLink {
   name: string;
   url: string;
@@ -25,7 +24,6 @@ const socialLinks: ContactLink[] = [
 
 <section id="contact" class="contact">
   <div class="contact-container">
-    <!-- Background Decoration -->
     <div class="contact-bg">
       <div class="bg-gradient"></div>
       <div class="bg-circle circle-1"></div>
@@ -33,7 +31,6 @@ const socialLinks: ContactLink[] = [
     </div>
 
     <div class="contact-content">
-      <!-- Section Header -->
       <div class="section-header reveal-bottom">
         <div class="section-label">
           <span class="label-line"></span>
@@ -47,7 +44,6 @@ const socialLinks: ContactLink[] = [
         </p>
       </div>
 
-      <!-- Email -->
       <div class="contact-email reveal-left reveal-delay-1">
         <a href={`mailto:${email}`} class="email-link">
           <span class="email-icon">
@@ -86,7 +82,6 @@ const socialLinks: ContactLink[] = [
         </a>
       </div>
 
-      <!-- Social Links -->
       <div class="social-links reveal-right reveal-delay-2">
         {
           socialLinks.map((link) => (
@@ -152,7 +147,6 @@ const socialLinks: ContactLink[] = [
         }
       </div>
 
-      <!-- CTA Button -->
       <div class="contact-cta reveal-bottom reveal-delay-3">
         <a href={`mailto:${email}`} class="btn btn-primary">
           <svg
@@ -190,7 +184,6 @@ const socialLinks: ContactLink[] = [
     position: relative;
   }
 
-  /* Background */
   .contact-bg {
     position: absolute;
     inset: 0;
@@ -227,7 +220,6 @@ const socialLinks: ContactLink[] = [
     bottom: 20%;
   }
 
-  /* Content */
   .contact-content {
     position: relative;
     text-align: center;
@@ -273,7 +265,6 @@ const socialLinks: ContactLink[] = [
     line-height: 1.7;
   }
 
-  /* Email Link */
   .contact-email {
     margin-bottom: var(--space-8);
   }
@@ -315,7 +306,6 @@ const socialLinks: ContactLink[] = [
     transform: translate(3px, -3px);
   }
 
-  /* Social Links */
   .social-links {
     display: flex;
     justify-content: center;
@@ -344,12 +334,10 @@ const socialLinks: ContactLink[] = [
     box-shadow: var(--shadow-lg);
   }
 
-  /* CTA */
   .contact-cta {
     margin-top: var(--space-6);
   }
 
-  /* Responsive */
   @media (max-width: 600px) {
     .contact-title {
       font-size: var(--text-3xl);

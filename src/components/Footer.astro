@@ -1,5 +1,4 @@
 ---
-// Footer Component - Simple minimalist footer
 const currentYear = new Date().getFullYear();
 ---
 
@@ -20,20 +19,10 @@ const currentYear = new Date().getFullYear();
     <div class="footer-content">
       <p class="footer-copyright">
         © {currentYear}
-        <span class="footer-name">Muhammad Fauzan Pratama</span>. All Rights Reserved.
+        <span class="footer-name">Muhamad Fauzan Pratama</span>. All Rights Reserved.
       </p>
+    </div>
 
-      <!-- <p class="footer-credit">
-        Built with
-        <span class="heart">♥</span>
-        using
-        <a href="https://astro.build" target="_blank" rel="noopener noreferrer"
-          >Astro</a
-        >
-      </p>
-    </div> -->
-
-    <!-- Back to top -->
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +112,6 @@ const currentYear = new Date().getFullYear();
     }
   }
 
-  /* Back to Top */
   .back-to-top {
     position: fixed;
     bottom: var(--space-6);
@@ -166,7 +154,6 @@ const currentYear = new Date().getFullYear();
 </style>
 
 <script>
-  // Back to top functionality
   const backToTop = document.getElementById("backToTop");
 
   window.addEventListener("scroll", () => {

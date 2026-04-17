@@ -19,12 +19,10 @@ const {
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
 
-    <!-- Fonts are loaded via CSS import -->
 
     <title>{title}</title>
   </head>
@@ -38,7 +36,6 @@ const {
 </style>
 
 <script>
-  // Scroll Reveal Animation using Intersection Observer
   document.addEventListener("DOMContentLoaded", () => {
     const revealElements = document.querySelectorAll(
       ".reveal, .reveal-bottom, .reveal-left, .reveal-right, .reveal-scale",
@@ -54,8 +51,6 @@ const {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("active");
-          // Optional: stop observing after reveal
-          // revealObserver.unobserve(entry.target);
         }
       });
     }, observerOptions);

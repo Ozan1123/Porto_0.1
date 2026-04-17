@@ -1,5 +1,4 @@
 ---
-// Hero Component - Main landing section with photo and intro
 interface Props {
   name?: string;
   title?: string;
@@ -14,7 +13,6 @@ const {
 ---
 
 <section id="home" class="hero">
-  <!-- Geometric Decorations -->
   <div class="geo-decoration">
     <div class="geo-circle circle-1"></div>
     <div class="geo-circle circle-2"></div>
@@ -26,7 +24,6 @@ const {
   </div>
 
   <div class="hero-container">
-    <!-- Photo Section -->
     <div class="hero-photo-wrapper">
       <div class="photo-ring"></div>
       <div class="photo-ring ring-outer"></div>
@@ -35,7 +32,6 @@ const {
       </div>
     </div>
 
-    <!-- Content Section -->
     <div class="hero-content">
       <p class="hero-greeting animate-fade-in-up">Hello, I'm</p>
       <h1 class="hero-name animate-fade-in-up animate-delay-1">{name}</h1>
@@ -86,7 +82,6 @@ const {
         </a>
       </div>
 
-      <!-- Scroll Indicator -->
       <div class="scroll-indicator animate-fade-in-up animate-delay-5">
         <div class="scroll-line"></div>
         <span>SCROLL DOWN</span>
@@ -106,7 +101,6 @@ const {
     overflow: hidden;
   }
 
-  /* Geometric Decorations */
   .geo-decoration {
     position: absolute;
     inset: 0;
@@ -168,7 +162,6 @@ const {
     animation-duration: 80s;
   }
 
-  /* Hero Container */
   .hero-container {
     max-width: 1300px;
     width: 100%;
@@ -182,7 +175,6 @@ const {
     z-index: 1;
   }
 
-  /* Photo Section */
   .hero-photo-wrapper {
     position: relative;
     display: flex;
@@ -247,7 +239,6 @@ const {
     font-weight: var(--font-medium);
   }
 
-  /* Content Section */
   .hero-content {
     position: relative;
   }
@@ -297,7 +288,6 @@ const {
     opacity: 0;
   }
 
-  /* Scroll Indicator */
   .scroll-indicator {
     display: flex;
     flex-direction: column;
@@ -321,7 +311,6 @@ const {
     background: linear-gradient(to bottom, var(--night-blue), transparent);
   }
 
-  /* Responsive */
   @media (max-width: 1024px) {
     .hero-container {
       grid-template-columns: 1fr;

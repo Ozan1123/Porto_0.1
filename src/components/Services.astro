@@ -1,5 +1,4 @@
 ---
-// Services Component
 const services = [
   {
     title: "Backend API Development",
@@ -24,7 +23,6 @@ const services = [
 
 <section id="services" class="services">
   <div class="services-container">
-    <!-- Section Header -->
     <div class="section-header reveal-bottom">
       <div class="section-label">
         <span class="label-line"></span>
@@ -35,7 +33,6 @@ const services = [
       <p class="section-subtitle">How I can add value to your next project</p>
     </div>
 
-    <!-- Services Grid -->
     <div class="services-grid">
       {
         services.map((service, index) => (
@@ -66,7 +63,6 @@ const services = [
     padding: 0 var(--space-6);
   }
 
-  /* Section Header */
   .section-header {
     text-align: center;
     margin-bottom: var(--space-16);
@@ -105,7 +101,6 @@ const services = [
     color: var(--gray);
   }
 
-  /* Services Grid */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -160,7 +155,6 @@ const services = [
     line-height: 1.6;
   }
 
-  /* Responsive */
   @media (max-width: 768px) {
     .section-title {
       font-size: var(--text-2xl);
