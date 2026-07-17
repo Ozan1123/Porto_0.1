@@ -4,185 +4,83 @@ interface Props {
 }
 
 const {
-  description = "I am an IT student at Devacto IT studying Game and Web Development. I am passionate about technology and enjoy solving problems through code to build engaging websites and games.",
+  description = "I'm an IT student at Devacto IT exploring both Web and Game Development. I like solving problems through code — whether it's crafting a clean REST API, optimizing a database query, or building a game that's actually fun to play. I learn best by breaking things, then figuring out why they broke.",
 } = Astro.props;
-
-const keywords = [
-  { text: "WEB DEV", position: "left" },
-  { text: "GAME DEV", position: "right" },
-  { text: "DEVACTO IT", position: "center" },
-];
 ---
 
 <section id="about" class="about">
   <div class="about-container">
     <div class="section-label reveal-bottom">
+      <span>about_me</span>
       <span class="label-line"></span>
-      <span class="label-text">ABOUT ME</span>
-      <span class="label-line"></span>
-    </div>
-
-    <div class="keywords-wrapper">
-      {
-        keywords.map((keyword, index) => (
-          <span
-            class={`keyword keyword-${keyword.position}`}
-            style={`animation-delay: ${index * 0.2}s`}
-          >
-            {keyword.text}
-          </span>
-        ))
-      }
     </div>
 
     <div class="about-content">
-      <div class="about-visual reveal-left">
-        <div class="visual-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="10"></circle>
-            <path d="M12 16v-4"></path>
-            <path d="M12 8h.01"></path>
-          </svg>
-        </div>
-        <svg class="connecting-lines" viewBox="0 0 200 200">
-          <line
-            x1="0"
-            y1="100"
-            x2="200"
-            y2="100"
-            stroke="var(--silver)"
-            stroke-width="1"
-            stroke-dasharray="4 4"></line>
-          <line
-            x1="100"
-            y1="0"
-            x2="100"
-            y2="200"
-            stroke="var(--silver)"
-            stroke-width="1"
-            stroke-dasharray="4 4"></line>
-        </svg>
-      </div>
+      <div class="about-text reveal-left">
+        <h2 class="about-heading">
+          A developer who likes to <span class="highlight">understand</span> how things work,
+          not just use them.
+        </h2>
 
-      <div class="about-text reveal-right">
         <p class="description">{description}</p>
 
-        <div class="personal-info">
-          <div class="info-item">
-            <span class="info-label">Born</span>
+        <div class="info-grid">
+          <div class="info-card">
+            <span class="info-key mono">born</span>
             <span class="info-value">29 Feb 2008</span>
           </div>
-          <div class="info-item">
-            <span class="info-label">City</span>
+          <div class="info-card">
+            <span class="info-key mono">location</span>
             <span class="info-value">Cilodong, Depok</span>
           </div>
-          <div class="info-item">
-            <span class="info-label">Degree</span>
-            <span class="info-value">Junior</span>
+          <div class="info-card">
+            <span class="info-key mono">school</span>
+            <span class="info-value">SMK Plus Pelita Nusantara</span>
           </div>
-        </div>
-
-        <div class="about-stats">
-          <div class="stat">
-            <span class="stat-number">Devacto it</span>
-            <span class="stat-label">Student</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">Web</span>
-            <span class="stat-label">Developer</span>
-          </div>
-          <div class="stat">
-            <span class="stat-number">Game</span>
-            <span class="stat-label">Developer</span>
+          <div class="info-card">
+            <span class="info-key mono">program</span>
+            <span class="info-value">Devacto IT</span>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="philosophy">
-      <div class="philosophy-item reveal-bottom reveal-delay-1">
-        <div class="philosophy-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
-            <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
-            <line x1="6" y1="6" x2="6.01" y2="6"></line>
-            <line x1="6" y1="18" x2="6.01" y2="18"></line>
-          </svg>
+      <div class="about-focus reveal-right">
+        <div class="focus-card">
+          <div class="focus-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <h3>Backend Systems</h3>
+          <p>Building APIs and server logic that can handle real traffic — not just localhost demos.</p>
         </div>
-        <h3>Backend Architecture</h3>
-        <p>
-          Building scalable, secure, and high-performance backend systems for
-          modern applications.
-        </p>
-      </div>
 
-      <div class="philosophy-item reveal-bottom reveal-delay-2">
-        <div class="philosophy-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-          </svg>
+        <div class="focus-card">
+          <div class="focus-icon icon-sky">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+              <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+              <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+            </svg>
+          </div>
+          <h3>Database Design</h3>
+          <p>Schema architecture and query optimization — making data work the way it should.</p>
         </div>
-        <h3>Database Optimization</h3>
-        <p>
-          Designing efficient database structures with query optimization for
-          maximum performance.
-        </p>
-      </div>
 
-      <div class="philosophy-item reveal-bottom reveal-delay-3">
-        <div class="philosophy-icon">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M12 20h9"></path>
-            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
-            ></path>
-          </svg>
+        <div class="focus-card">
+          <div class="focus-icon icon-green">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5 12 2"></polygon>
+              <line x1="12" y1="22" x2="12" y2="15.5"></line>
+              <polyline points="22 8.5 12 15.5 2 8.5"></polyline>
+            </svg>
+          </div>
+          <h3>Game Development</h3>
+          <p>Creating interactive experiences — from simple prototypes to polished gameplay loops.</p>
         </div>
-        <h3>UX-Driven Development</h3>
-        <p>
-          Powerful backend systems while prioritizing seamless user experience.
-        </p>
       </div>
     </div>
   </div>
@@ -192,236 +90,162 @@ const keywords = [
   .about {
     padding: var(--space-24) 0;
     position: relative;
-    background: linear-gradient(180deg, var(--off-white) 0%, var(--white) 100%);
   }
 
   .about-container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 var(--space-6);
   }
 
-  .section-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-16);
-  }
-
-  .label-line {
-    width: 60px;
-    height: 1px;
-    background: var(--silver);
-  }
-
-  .label-text {
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    color: var(--night-blue);
-    letter-spacing: 0.2em;
-  }
-
-  .keywords-wrapper {
-    position: relative;
-    height: 100px;
-    margin-bottom: var(--space-12);
-  }
-
-  .keyword {
-    position: absolute;
-    font-size: var(--text-sm);
-    font-weight: var(--font-medium);
-    color: var(--night-blue-light);
-    letter-spacing: 0.15em;
-    opacity: 0;
-    animation: fadeIn 0.6s ease forwards;
-  }
-
-  .keyword-left {
-    top: 0;
-    left: 10%;
-  }
-
-  .keyword-right {
-    top: 20px;
-    right: 15%;
-  }
-
-  .keyword-center {
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
   .about-content {
     display: grid;
-    grid-template-columns: auto 1fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--space-12);
     align-items: start;
-    margin-bottom: var(--space-16);
   }
 
-  .about-visual {
-    position: relative;
-    width: 120px;
-    height: 120px;
-  }
-
-  .visual-circle {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 1px solid var(--silver);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--night-blue);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-  }
-
-  .connecting-lines {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0.5;
-  }
-
-  .about-text {
-    max-width: 600px;
-  }
-
-  .description {
-    font-size: var(--text-lg);
-    color: var(--gray);
-    line-height: 1.8;
+  .about-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    line-height: 1.3;
     margin-bottom: var(--space-6);
   }
 
-  .personal-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-8);
-    margin-bottom: var(--space-8);
-    padding-bottom: var(--space-8);
-    border-bottom: 1px solid var(--silver);
+  .highlight {
+    color: var(--primary);
+    position: relative;
   }
 
-  .info-item {
+  .highlight::after {
+    content: "";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    height: 6px;
+    background: var(--accent-sky-light);
+    border-radius: var(--radius-sm);
+    z-index: -1;
+  }
+
+  .description {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--space-8);
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .info-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: var(--space-3) var(--space-4);
     display: flex;
     flex-direction: column;
     gap: var(--space-1);
+    transition: all var(--transition-fast);
   }
 
-  .info-label {
+  .info-card:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .info-key {
     font-size: var(--text-xs);
-    color: var(--gray-light);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    color: var(--accent-rose);
+    text-transform: lowercase;
   }
 
   .info-value {
-    font-size: var(--text-base);
-    font-weight: var(--font-medium);
-    color: var(--night-blue);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    color: var(--text-primary);
   }
 
-  .about-stats {
-    display: flex;
-    gap: var(--space-10);
-  }
-
-  .stat {
+  /* Focus cards */
+  .about-focus {
     display: flex;
     flex-direction: column;
-    gap: var(--space-1);
+    gap: var(--space-4);
   }
 
-  .stat-number {
-    font-size: var(--text-3xl);
-    font-weight: var(--font-bold);
-    color: var(--night-blue);
-  }
-
-  .stat-label {
-    font-size: var(--text-sm);
-    color: var(--gray-light);
-  }
-
-  .philosophy {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-8);
-    padding-top: var(--space-12);
-    border-top: 1px solid var(--silver);
-  }
-
-  .philosophy-item {
-    text-align: center;
+  .focus-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
     padding: var(--space-6);
-  }
-
-  .philosophy-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    background: var(--off-white);
-    border: 1px solid var(--silver);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--night-blue);
-    margin: 0 auto var(--space-4);
     transition: all var(--transition-base);
   }
 
-  .philosophy-item:hover .philosophy-icon {
-    background: var(--night-blue);
-    color: var(--white);
+  .focus-card:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+  }
+
+  .focus-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    background: var(--primary-glow);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    transition: all var(--transition-base);
+  }
+
+  .focus-icon.icon-sky {
+    background: var(--accent-sky-light);
+    color: #0EA5E9;
+  }
+
+  .focus-icon.icon-green {
+    background: var(--accent-green-light);
+    color: var(--accent-green);
+  }
+
+  .focus-card:hover .focus-icon {
     transform: scale(1.1);
   }
 
-  .philosophy-item h3 {
-    font-size: var(--text-base);
+  .focus-card h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
     font-weight: var(--font-semibold);
-    color: var(--night-blue);
+    color: var(--text-primary);
     margin-bottom: var(--space-2);
   }
 
-  .philosophy-item p {
+  .focus-card p {
     font-size: var(--text-sm);
-    color: var(--gray);
+    color: var(--text-secondary);
     line-height: 1.6;
   }
 
   @media (max-width: 768px) {
     .about-content {
       grid-template-columns: 1fr;
-      text-align: center;
+      gap: var(--space-8);
     }
 
-    .about-visual {
-      margin: 0 auto;
+    .about-heading {
+      font-size: var(--text-2xl);
     }
 
-    .about-stats {
-      justify-content: center;
-    }
-
-    .philosophy {
+    .info-grid {
       grid-template-columns: 1fr;
-      gap: var(--space-6);
-    }
-
-    .keywords-wrapper {
-      display: none;
     }
   }
 </style>

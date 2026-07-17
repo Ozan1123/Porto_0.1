@@ -4,37 +4,27 @@ const currentYear = new Date().getFullYear();
 
 <footer class="footer">
   <div class="footer-container">
-    <div class="footer-divider">
-      <svg viewBox="0 0 100 2" preserveAspectRatio="none">
-        <line
-          x1="0"
-          y1="1"
-          x2="100"
-          y2="1"
-          stroke="var(--silver)"
-          stroke-width="0.5"></line>
-      </svg>
-    </div>
+    <div class="footer-divider"></div>
 
     <div class="footer-content">
+      <div class="footer-left">
+        <span class="footer-logo mono">
+          <span class="bracket">{"{"}</span>zan<span class="bracket">{"}"}</span>
+        </span>
+      </div>
+
       <p class="footer-copyright">
-        © {currentYear}
-        <span class="footer-name">Muhamad Fauzan Pratama</span>. All Rights Reserved.
+        <span class="mono comment">// </span>
+        © {currentYear} <span class="footer-name">Muhamad Fauzan Pratama</span>
+      </p>
+
+      <p class="footer-credit mono">
+        built with astro + css + ☕
       </p>
     </div>
 
     <button class="back-to-top" id="backToTop" aria-label="Back to top">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="20"
-        height="20"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="m18 15-6-6-6 6"></path>
       </svg>
     </button>
@@ -44,7 +34,6 @@ const currentYear = new Date().getFullYear();
 <style>
   .footer {
     padding: var(--space-8) 0 var(--space-6);
-    background: var(--white);
     position: relative;
   }
 
@@ -56,12 +45,9 @@ const currentYear = new Date().getFullYear();
   }
 
   .footer-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--border), transparent);
     margin-bottom: var(--space-6);
-  }
-
-  .footer-divider svg {
-    width: 100%;
-    height: 2px;
   }
 
   .footer-content {
@@ -71,45 +57,34 @@ const currentYear = new Date().getFullYear();
     gap: var(--space-2);
   }
 
+  .footer-logo {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    margin-bottom: var(--space-2);
+  }
+
+  .bracket {
+    color: var(--accent-rose);
+  }
+
   .footer-copyright {
     font-size: var(--text-sm);
-    color: var(--gray);
+    color: var(--text-muted);
+  }
+
+  .comment {
+    color: var(--text-faint);
   }
 
   .footer-name {
     font-weight: var(--font-semibold);
-    color: var(--night-blue);
-    letter-spacing: 0.05em;
+    color: var(--primary);
   }
 
   .footer-credit {
     font-size: var(--text-xs);
-    color: var(--gray-light);
-  }
-
-  .footer-credit a {
-    color: var(--night-blue-light);
-    font-weight: var(--font-medium);
-  }
-
-  .footer-credit a:hover {
-    text-decoration: underline;
-  }
-
-  .heart {
-    color: #e74c3c;
-    display: inline-block;
-    animation: heartbeat 1.5s ease-in-out infinite;
-  }
-
-  @keyframes heartbeat {
-    0%,
-    100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.2);
-    }
+    color: var(--text-faint);
   }
 
   .back-to-top {
@@ -118,9 +93,9 @@ const currentYear = new Date().getFullYear();
     right: var(--space-6);
     width: 44px;
     height: 44px;
-    border-radius: 50%;
-    background: var(--night-blue);
-    color: var(--white);
+    border-radius: var(--radius-lg);
+    background: var(--primary);
+    color: var(--surface);
     border: none;
     cursor: pointer;
     display: flex;
@@ -130,7 +105,7 @@ const currentYear = new Date().getFullYear();
     visibility: hidden;
     transform: translateY(20px);
     transition: all var(--transition-base);
-    box-shadow: var(--shadow-lg);
+    box-shadow: var(--shadow-primary);
     z-index: var(--z-sticky);
   }
 
@@ -141,7 +116,7 @@ const currentYear = new Date().getFullYear();
   }
 
   .back-to-top:hover {
-    background: var(--night-blue-light);
+    background: var(--primary-dark);
     transform: translateY(-4px);
   }
 

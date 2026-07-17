@@ -10,8 +10,8 @@ const experiences: Experience[] = [
   {
     period: "Present",
     role: "Web & Game Developer",
-    company: "Devacto it SMK PLUS PELITA NUSANTARA",
-    description: "Participating in the Devacto it program, focusing on both Web Development and Game Development projects.",
+    company: "Devacto IT — SMK Plus Pelita Nusantara",
+    description: "Learning and building real projects in both Web Development and Game Development tracks. Currently focused on Laravel backend systems and Unity game prototyping.",
   }
 ];
 ---
@@ -19,27 +19,27 @@ const experiences: Experience[] = [
 {experiences.length > 0 && (
 <section id="experience" class="experience">
   <div class="experience-container">
-    <div class="section-header reveal-bottom">
-      <div class="section-label">
-        <span class="label-line"></span>
-        <span class="label-text">MY JOURNEY</span>
-        <span class="label-line"></span>
-      </div>
-      <h2 class="section-title">Experience & Education</h2>
+    <div class="section-label reveal-bottom">
+      <span>experience</span>
+      <span class="label-line"></span>
     </div>
 
-    <div class="timeline-grid">
+    <h2 class="section-title reveal-bottom">Where I've been</h2>
+
+    <div class="timeline">
       {
         experiences.map((exp, index) => (
           <div
-            class="experience-item reveal-bottom"
-            style={`transition-delay: ${index * 0.1}s`}
+            class="exp-card reveal-left"
+            style={`transition-delay: ${index * 0.15}s`}
           >
-            <div class="item-period">{exp.period}</div>
-            <div class="item-content">
-              <h3 class="item-role">{exp.role}</h3>
-              <div class="item-company">{exp.company}</div>
-              <p class="item-description">{exp.description}</p>
+            <div class="exp-period">
+              <span class="period-badge mono">{exp.period}</span>
+            </div>
+            <div class="exp-content">
+              <h3 class="exp-role">{exp.role}</h3>
+              <div class="exp-company mono">{exp.company}</div>
+              <p class="exp-description">{exp.description}</p>
             </div>
           </div>
         ))
@@ -52,7 +52,6 @@ const experiences: Experience[] = [
 <style>
   .experience {
     padding: var(--space-24) 0;
-    background: var(--white);
     position: relative;
   }
 
@@ -62,107 +61,74 @@ const experiences: Experience[] = [
     padding: 0 var(--space-6);
   }
 
-  .section-header {
-    text-align: center;
-    margin-bottom: var(--space-16);
-  }
-
-  .section-label {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-4);
-  }
-
-  .label-line {
-    width: 60px;
-    height: 1px;
-    background: var(--silver);
-  }
-
-  .label-text {
-    font-size: var(--text-sm);
-    font-weight: var(--font-semibold);
-    color: var(--night-blue);
-    letter-spacing: 0.2em;
-  }
-
   .section-title {
+    font-family: var(--font-display);
     font-size: var(--text-3xl);
     font-weight: var(--font-bold);
-    color: var(--night-blue);
+    color: var(--text-primary);
+    margin-bottom: var(--space-10);
   }
 
-  .timeline-grid {
+  .timeline {
     display: flex;
     flex-direction: column;
-    gap: var(--space-8);
+    gap: var(--space-6);
   }
 
-  .experience-item {
+  .exp-card {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: var(--space-8);
-    background: var(--off-white);
-    padding: var(--space-8);
-    border-radius: var(--radius-lg);
-    border-left: 4px solid var(--night-blue);
+    grid-template-columns: 140px 1fr;
+    gap: var(--space-6);
+    background: var(--surface);
+    padding: var(--space-6) var(--space-8);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
     transition: all var(--transition-base);
   }
 
-  .experience-item:hover {
+  .exp-card:hover {
     transform: translateX(8px);
     box-shadow: var(--shadow-md);
-    background: var(--white);
-    border-color: var(--night-blue-light);
+    border-left-color: var(--accent-rose);
   }
 
-  .item-period {
+  .period-badge {
     font-size: var(--text-sm);
     font-weight: var(--font-bold);
-    color: var(--night-blue-light);
-    display: flex;
-    align-items: flex-start;
+    color: var(--primary);
     padding-top: 4px;
   }
 
-  .item-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .item-role {
+  .exp-role {
+    font-family: var(--font-display);
     font-size: var(--text-xl);
     font-weight: var(--font-bold);
-    color: var(--night-blue);
-    margin: 0;
+    color: var(--text-primary);
+    margin-bottom: var(--space-1);
   }
 
-  .item-company {
-    font-size: var(--text-base);
-    font-weight: var(--font-medium);
-    color: var(--gray-dark);
+  .exp-company {
+    font-size: var(--text-sm);
+    color: var(--accent-rose);
+    margin-bottom: var(--space-3);
   }
 
-  .item-description {
+  .exp-description {
     font-size: var(--text-base);
-    color: var(--gray);
-    line-height: 1.6;
-    margin-top: var(--space-2);
+    color: var(--text-secondary);
+    line-height: 1.7;
   }
 
   @media (max-width: 768px) {
-    .experience-item {
+    .exp-card {
       grid-template-columns: 1fr;
-      gap: var(--space-4);
-      padding: var(--space-6);
+      gap: var(--space-3);
+      padding: var(--space-5) var(--space-6);
     }
 
-    .item-period {
-      padding-top: 0;
-      margin-bottom: var(--space-2);
+    .section-title {
+      font-size: var(--text-2xl);
     }
   }
 </style>

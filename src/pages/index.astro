@@ -4,37 +4,37 @@ import Navbar from "../components/Navbar.astro";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Portfolio from "../components/Portfolio.astro";
+import Certificates from "../components/Certificates.astro";
 import Services from "../components/Services.astro";
 import Experience from "../components/Experience.astro";
-import Testimonials from "../components/Testimonials.astro";
 import Skills from "../components/Skills.astro";
 import Contact from "../components/Contact.astro";
 import Footer from "../components/Footer.astro";
 ---
 
-<Layout title="FAUZAN | Backend Developer & Database Administrator">
+<Layout title="FAUZAN | Web & Game Developer">
   <Navbar />
 
   <main>
     <Hero
       name="M. Fauzan Pratama"
       title="Web & Game Developer"
-      subtitle="| Devacto it Student"
+      subtitle="Devacto IT"
     />
 
     <About
-      description="I am a backend developer passionate about building robust and scalable systems. With a strong focus on database architecture and performance optimization, I turn complex requirements into efficient and reliable data solutions."
+      description="I'm an IT student at Devacto IT exploring both Web and Game Development. I like solving problems through code — whether it's crafting a clean REST API, optimizing a database query, or building a game that's actually fun to play. I learn best by breaking things, then figuring out why they broke."
     />
+
+    <Portfolio />
+
+    <Certificates />
+
+    <Skills />
 
     <Services />
 
     <Experience />
-
-    <Testimonials />
-
-    <Portfolio />
-
-    <Skills />
 
     <Contact />
   </main>
@@ -46,16 +46,5 @@ import Footer from "../components/Footer.astro";
   main {
     position: relative;
     z-index: 1;
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.6s ease;
-  }
-
-  .reveal.active {
-    opacity: 1;
-    transform: translateY(0);
   }
 </style>

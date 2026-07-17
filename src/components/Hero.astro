@@ -8,72 +8,46 @@ interface Props {
 const {
   name = "M. FAUZAN PRATAMA",
   title = "Web & Game Developer",
-  subtitle = "| Devacto it Student",
+  subtitle = "Devacto IT Student",
 } = Astro.props;
 ---
 
 <section id="home" class="hero">
-  <div class="geo-decoration">
-    <div class="geo-circle circle-1"></div>
-    <div class="geo-circle circle-2"></div>
-    <div class="geo-circle circle-3"></div>
-    <svg class="geo-lines" viewBox="0 0 400 400">
-      <circle cx="200" cy="200" r="180" class="line-circle"></circle>
-      <circle cx="200" cy="200" r="140" class="line-circle delay"></circle>
-    </svg>
-  </div>
+  <!-- Floating code tags (Signature Element) -->
+  <span class="code-tag tag-1">&lt;/div&gt;</span>
+  <span class="code-tag tag-2">&lt;br/&gt;</span>
+  <span class="code-tag tag-3">/** */</span>
+  <span class="code-tag tag-4">&lt;section&gt;</span>
 
   <div class="hero-container">
-    <div class="hero-photo-wrapper">
-      <div class="photo-ring"></div>
-      <div class="photo-ring ring-outer"></div>
-      <div class="hero-photo">
-        <img src="/profile.png" alt="M. Fauzan Pratama - Backend Developer" />
-      </div>
-    </div>
-
     <div class="hero-content">
-      <p class="hero-greeting animate-fade-in-up">Hello, I'm</p>
-      <h1 class="hero-name animate-fade-in-up animate-delay-1">{name}</h1>
-      <h2 class="hero-title animate-fade-in-up animate-delay-2">
-        {title}
-        <span class="title-accent">{subtitle}</span>
+      <div class="hero-greeting animate-fade-in-up" style="opacity: 0;">
+        <span class="greeting-mono">// hello world</span>
+      </div>
+
+      <h1 class="hero-name animate-fade-in-up animate-delay-1" style="opacity: 0;">
+        Hi, I'm <span class="name-highlight">{name.split(" ").slice(1)[0]}</span>
+      </h1>
+
+      <h2 class="hero-title animate-fade-in-up animate-delay-2" style="opacity: 0;">
+        I write
+        <span class="typing-wrapper">
+          <span class="typing-text" id="typingText">backend code</span>
+          <span class="typing-cursor">|</span>
+        </span>
       </h2>
-      <p class="hero-description animate-fade-in-up animate-delay-3">
-        Building robust backend systems and optimizing database architecture.
-        Turning complex data into efficient, scalable solutions.
+
+      <p class="hero-description animate-fade-in-up animate-delay-3" style="opacity: 0;">
+        IT student at {subtitle} who builds web apps, games, and
+        robust backend systems. Currently exploring everything that
+        compiles, renders, or breaks interestingly.
       </p>
-      <div class="hero-cta animate-fade-in-up animate-delay-4">
-        <a href="#work" class="btn btn-primary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path d="M6 9l6 6 6-6"></path>
-          </svg>
-          View My Work
-        </a>
+
+      <div class="hero-cta animate-fade-in-up animate-delay-4" style="opacity: 0;">
+        <a href="#work" class="btn btn-primary">View My Work</a>
         <a href="#contact" class="btn btn-outline">Get In Touch</a>
         <a href="/resume.pdf" target="_blank" class="btn btn-outline" download>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            style="margin-right: 8px;"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -81,12 +55,48 @@ const {
           Download CV
         </a>
       </div>
+    </div>
 
-      <div class="scroll-indicator animate-fade-in-up animate-delay-5">
-        <div class="scroll-line"></div>
-        <span>SCROLL DOWN</span>
+    <!-- Right column: Photo + Terminal -->
+    <div class="hero-right">
+      <!-- Profile photo -->
+      <div class="hero-photo-wrapper animate-pop-in animate-delay-3" style="opacity: 0;">
+        <div class="photo-backdrop"></div>
+        <div class="hero-photo">
+          <img src="/profile.png" alt="M. Fauzan Pratama" />
+        </div>
+      </div>
+
+      <!-- Terminal-style status card -->
+      <div class="hero-terminal animate-pop-in animate-delay-5" style="opacity: 0;">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">status.json</span>
+        </div>
+        <div class="terminal-body">
+          <pre><code><span class="json-bracket">{"{"}</span>
+  <span class="json-key">"name"</span>: <span class="json-string">"Fauzan"</span>,
+  <span class="json-key">"role"</span>: <span class="json-string">"Web & Game Dev"</span>,
+  <span class="json-key">"school"</span>: <span class="json-string">"Devacto IT"</span>,
+  <span class="json-key">"stack"</span>: <span class="json-bracket">[</span>
+    <span class="json-string">"Laravel"</span>, <span class="json-string">"MySQL"</span>,
+    <span class="json-string">"JavaScript"</span>, <span class="json-string">"PHP"</span>
+  <span class="json-bracket">]</span>,
+  <span class="json-key">"available"</span>: <span class="json-bool">true</span>,
+  <span class="json-key">"coffee"</span>: <span class="json-number">∞</span>
+<span class="json-bracket">{"}"}</span></code></pre>
+        </div>
       </div>
     </div>
+  </div>
+
+  <div class="scroll-indicator animate-fade-in-up animate-delay-6" style="opacity: 0;">
+    <div class="scroll-line"></div>
+    <span class="scroll-text">scroll_down()</span>
   </div>
 </section>
 
@@ -94,6 +104,7 @@ const {
   .hero {
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -101,142 +112,46 @@ const {
     overflow: hidden;
   }
 
-  .geo-decoration {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
+  /* Floating code tags */
+  .tag-1 {
+    top: 18%;
+    right: 12%;
+    font-size: var(--text-sm);
+    animation: float 8s ease-in-out infinite;
   }
 
-  .geo-circle {
-    position: absolute;
-    border: 4px solid var(--silver);
-    border-radius: 50%;
-    opacity: 0.5;
+  .tag-2 {
+    bottom: 25%;
+    left: 8%;
+    font-size: var(--text-xs);
+    animation: float 6s ease-in-out infinite 1s;
   }
 
-  .circle-1 {
-    width: 400px;
-    height: 400px;
-    top: 10%;
-    right: -100px;
-    animation: pulse-ring 8s ease-in-out infinite;
-  }
-
-  .circle-2 {
-    width: 200px;
-    height: 200px;
-    bottom: 20%;
+  .tag-3 {
+    top: 35%;
     left: 5%;
-    animation: pulse-ring 6s ease-in-out infinite 1s;
+    font-size: var(--text-sm);
+    animation: float 10s ease-in-out infinite 0.5s;
   }
 
-  .circle-3 {
-    width: 100px;
-    height: 100px;
-    top: 30%;
-    left: 15%;
-    animation: pulse-ring 5s ease-in-out infinite 0.5s;
-  }
-
-  .geo-lines {
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    top: 50%;
-    left: 20%;
-    transform: translate(-50%, -50%);
-    opacity: 0.3;
-  }
-
-  .line-circle {
-    fill: none;
-    stroke: var(--silver);
-    stroke-width: 1;
-    stroke-dasharray: 10 5;
-    animation: rotate-slow 60s linear infinite;
-  }
-
-  .line-circle.delay {
-    animation-direction: reverse;
-    animation-duration: 80s;
+  .tag-4 {
+    bottom: 15%;
+    right: 6%;
+    font-size: var(--text-xs);
+    animation: float 7s ease-in-out infinite 2s;
   }
 
   .hero-container {
-    max-width: 1300px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 0 var(--space-6);
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: var(--space-16);
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--space-12);
     align-items: center;
     position: relative;
     z-index: 1;
-  }
-
-  .hero-photo-wrapper {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .photo-ring {
-    position: absolute;
-    width: 320px;
-    height: 320px;
-    border: 2px solid var(--silver);
-    border-radius: 50%;
-    animation: pulse-ring 4s ease-in-out infinite;
-  }
-
-  .photo-ring.ring-outer {
-    width: 380px;
-    height: 380px;
-    border-width: 1px;
-    animation-delay: 0.5s;
-  }
-
-  .hero-photo {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-    background: linear-gradient(
-      135deg,
-      var(--off-white) 0%,
-      var(--silver) 100%
-    );
-    overflow: hidden;
-    box-shadow:
-      0 0 0 4px var(--white),
-      0 0 0 6px var(--platinum),
-      var(--shadow-xl);
-    position: relative;
-    z-index: 1;
-  }
-
-  .hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-  }
-
-  .photo-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--gray-light);
-    gap: var(--space-2);
-  }
-
-  .photo-placeholder span {
-    font-size: var(--text-sm);
-    font-weight: var(--font-medium);
   }
 
   .hero-content {
@@ -244,73 +159,251 @@ const {
   }
 
   .hero-greeting {
-    font-size: var(--text-lg);
-    color: var(--gray);
-    font-weight: var(--font-light);
-    margin-bottom: var(--space-2);
-    opacity: 0;
+    margin-bottom: var(--space-3);
+  }
+
+  .greeting-mono {
+    font-family: var(--font-mono);
+    font-size: var(--text-base);
+    color: var(--accent-rose);
+    font-weight: var(--font-medium);
   }
 
   .hero-name {
-    font-size: var(--text-7xl);
-    font-weight: var(--font-extrabold);
-    color: var(--night-blue);
-    letter-spacing: -0.02em;
-    line-height: 1;
+    font-family: var(--font-display);
+    font-size: var(--text-6xl);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    line-height: 1.1;
     margin-bottom: var(--space-4);
-    opacity: 0;
+  }
+
+  .name-highlight {
+    color: var(--primary);
+    position: relative;
+    display: inline-block;
+  }
+
+  .name-highlight::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: var(--accent-rose-light);
+    border-radius: var(--radius-sm);
+    z-index: -1;
   }
 
   .hero-title {
+    font-family: var(--font-display);
     font-size: var(--text-2xl);
     font-weight: var(--font-medium);
-    color: var(--gray-dark);
+    color: var(--text-secondary);
     margin-bottom: var(--space-6);
-    opacity: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
   }
 
-  .title-accent {
-    color: var(--night-blue-light);
-    font-weight: var(--font-light);
+  .typing-wrapper {
+    display: inline-flex;
+    align-items: center;
+    background: var(--primary-glow);
+    padding: 2px var(--space-3);
+    border-radius: var(--radius-sm);
+    border-left: 3px solid var(--primary);
+  }
+
+  .typing-text {
+    font-family: var(--font-mono);
+    color: var(--primary);
+    font-weight: var(--font-semibold);
+  }
+
+  .typing-cursor {
+    font-family: var(--font-mono);
+    color: var(--accent-rose);
+    font-weight: var(--font-bold);
+    animation: blink 0.8s step-end infinite;
+    margin-left: 2px;
   }
 
   .hero-description {
-    font-size: var(--text-base);
-    color: var(--gray);
-    max-width: 480px;
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    max-width: 520px;
     margin-bottom: var(--space-8);
-    opacity: 0;
+    line-height: 1.8;
   }
 
   .hero-cta {
     display: flex;
-    gap: var(--space-4);
-    opacity: 0;
+    flex-wrap: wrap;
+    gap: var(--space-3);
   }
 
+  /* Right column */
+  .hero-right {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Profile photo */
+  .hero-photo-wrapper {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    z-index: 1;
+  }
+
+  .photo-backdrop {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+      var(--primary),
+      var(--accent-rose),
+      var(--accent-sky),
+      var(--primary)
+    );
+    top: 0;
+    left: 0;
+    animation: slowSpin 10s linear infinite;
+    opacity: 0.2;
+    filter: blur(15px);
+    transform: scale(1.1);
+  }
+
+  @keyframes slowSpin {
+    from { transform: scale(1.1) rotate(0deg); }
+    to { transform: scale(1.1) rotate(360deg); }
+  }
+
+  .hero-photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 2;
+    background: var(--bg-alt);
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  /* Terminal card */
+  .hero-terminal {
+    position: absolute;
+    bottom: -40px;
+    left: -60px;
+    width: 320px;
+    z-index: 3;
+    background: var(--surface);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .hero-terminal:hover {
+    transform: translateY(-4px) rotate(-0.5deg);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .terminal-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3) var(--space-4);
+    background: var(--bg-alt);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .terminal-dots {
+    display: flex;
+    gap: 6px;
+  }
+
+  .terminal-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .dot-red { background: #FF6058; }
+  .dot-yellow { background: #FFBD2E; }
+  .dot-green { background: #28CA42; }
+
+  .terminal-title {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+  }
+
+  .terminal-body {
+    padding: var(--space-4);
+  }
+
+  .terminal-body pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+
+  .terminal-body code {
+    font-family: inherit;
+  }
+
+  .json-bracket { color: var(--text-muted); }
+  .json-key { color: var(--primary); }
+  .json-string { color: var(--accent-rose); }
+  .json-bool { color: var(--accent-green); }
+  .json-number { color: var(--accent-sky); }
+
+  /* Scroll indicator */
   .scroll-indicator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: var(--space-2);
-    color: var(--gray);
-    font-size: var(--text-xs);
-    letter-spacing: 0.2em;
-    font-weight: var(--font-medium);
-    margin-top: var(--space-12);
-    opacity: 0;
-  }
-
-  .scroll-indicator span {
-    animation: float 2s ease-in-out infinite;
+    gap: var(--space-3);
+    margin-top: var(--space-10);
+    z-index: 1;
   }
 
   .scroll-line {
     width: 1px;
     height: 30px;
-    background: linear-gradient(to bottom, var(--night-blue), transparent);
+    background: linear-gradient(to bottom, var(--primary), transparent);
   }
 
+  .scroll-text {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    animation: float 2s ease-in-out infinite;
+  }
+
+  /* RESPONSIVE */
   @media (max-width: 1024px) {
     .hero-container {
       grid-template-columns: 1fr;
@@ -318,23 +411,8 @@ const {
       gap: var(--space-10);
     }
 
-    .hero-photo-wrapper {
-      order: -1;
-    }
-
-    .hero-photo {
-      width: 220px;
-      height: 220px;
-    }
-
-    .photo-ring {
-      width: 260px;
-      height: 260px;
-    }
-
-    .photo-ring.ring-outer {
-      width: 300px;
-      height: 300px;
+    .hero-title {
+      justify-content: center;
     }
 
     .hero-description {
@@ -345,30 +423,88 @@ const {
     .hero-cta {
       justify-content: center;
     }
+
+    .hero-right {
+      min-height: auto;
+      flex-direction: column;
+      gap: var(--space-8);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .hero-photo-wrapper {
+      position: relative;
+      top: auto;
+      right: auto;
+    }
+
+    .hero-terminal {
+      position: relative;
+      bottom: auto;
+      left: auto;
+      width: 100%;
+    }
+
+    .hero-photo {
+      width: 200px;
+      height: 200px;
+    }
+
+    .code-tag {
+      display: none;
+    }
   }
 
   @media (max-width: 480px) {
-    .hero-photo {
-      width: 180px;
-      height: 180px;
-    }
-
-    .photo-ring {
-      width: 220px;
-      height: 220px;
-    }
-
-    .photo-ring.ring-outer {
-      width: 260px;
-      height: 260px;
+    .hero-name {
+      font-size: var(--text-4xl);
     }
 
     .hero-cta {
       flex-direction: column;
     }
 
-    .hero-name {
-      font-size: var(--text-5xl);
+    .hero-cta .btn {
+      width: 100%;
     }
   }
 </style>
+
+<script>
+  // Typewriter effect
+  const words = ["backend code", "web apps", "games", "robust APIs", "Laravel projects"];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  const typingEl = document.getElementById("typingText");
+
+  function typeEffect() {
+    if (!typingEl) return;
+
+    const currentWord = words[wordIndex];
+
+    if (!isDeleting) {
+      typingEl.textContent = currentWord.substring(0, charIndex + 1);
+      charIndex++;
+
+      if (charIndex === currentWord.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 2000);
+        return;
+      }
+    } else {
+      typingEl.textContent = currentWord.substring(0, charIndex - 1);
+      charIndex--;
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    const speed = isDeleting ? 40 : 80;
+    setTimeout(typeEffect, speed);
+  }
+
+  setTimeout(typeEffect, 1500);
+</script>

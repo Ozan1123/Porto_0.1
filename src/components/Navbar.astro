@@ -1,17 +1,23 @@
-<nav class="navbar">
+<nav class="navbar" id="navbar">
   <div class="navbar-container">
-    <a href="#" class="logo">Muhamad Fauzan Pratama</a>
+    <a href="#" class="logo">
+      <span class="logo-bracket">{"{"}</span>
+      <span class="logo-text">Fauzan</span>
+      <span class="logo-bracket">{"}"}</span>
+    </a>
 
     <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
+      <span class="menu-line"></span>
       <span class="menu-line"></span>
       <span class="menu-line"></span>
     </button>
 
     <ul class="nav-links" id="navLinks">
-      <li><a href="#home" class="nav-link active">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#work" class="nav-link">Work</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+      <li><a href="#home" class="nav-link active"><span class="nav-mono">//</span> home</a></li>
+      <li><a href="#about" class="nav-link"><span class="nav-mono">//</span> about</a></li>
+      <li><a href="#work" class="nav-link"><span class="nav-mono">//</span> work</a></li>
+      <li><a href="#skills" class="nav-link"><span class="nav-mono">//</span> skills</a></li>
+      <li><a href="#contact" class="nav-link"><span class="nav-mono">//</span> contact</a></li>
     </ul>
   </div>
 </nav>
@@ -24,14 +30,15 @@
     right: 0;
     z-index: var(--z-fixed);
     padding: var(--space-4) 0;
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(248, 249, 250, 0.8);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid transparent;
     transition: all var(--transition-base);
   }
 
   .navbar.scrolled {
-    border-bottom-color: var(--silver);
+    border-bottom-color: var(--border);
     box-shadow: var(--shadow-sm);
   }
 
@@ -45,30 +52,46 @@
   }
 
   .logo {
+    font-family: var(--font-mono);
     font-size: var(--text-lg);
     font-weight: var(--font-bold);
-    color: var(--night-blue);
-    letter-spacing: 0.1em;
-    transition: opacity var(--transition-fast);
+    display: flex;
+    gap: 2px;
+    transition: transform var(--transition-fast);
   }
 
   .logo:hover {
-    opacity: 0.7;
+    transform: scale(1.05);
+  }
+
+  .logo-bracket {
+    color: var(--accent-rose);
+  }
+
+  .logo-text {
+    color: var(--text-primary);
   }
 
   .nav-links {
     display: flex;
     align-items: center;
-    gap: var(--space-8);
+    gap: var(--space-6);
     list-style: none;
   }
 
   .nav-link {
     position: relative;
+    font-family: var(--font-mono);
     font-size: var(--text-sm);
     font-weight: var(--font-medium);
-    color: var(--gray);
-    padding: var(--space-2) 0;
+    color: var(--text-muted);
+    padding: var(--space-2) var(--space-1);
+    transition: color var(--transition-fast);
+  }
+
+  .nav-mono {
+    color: var(--text-faint);
+    margin-right: 4px;
     transition: color var(--transition-fast);
   }
 
@@ -79,13 +102,19 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--night-blue);
+    background: var(--primary);
+    border-radius: var(--radius-full);
     transition: width var(--transition-base);
   }
 
   .nav-link:hover,
   .nav-link.active {
-    color: var(--night-blue);
+    color: var(--primary);
+  }
+
+  .nav-link:hover .nav-mono,
+  .nav-link.active .nav-mono {
+    color: var(--accent-rose);
   }
 
   .nav-link:hover::after,
@@ -96,7 +125,7 @@
   .menu-toggle {
     display: none;
     flex-direction: column;
-    gap: 6px;
+    gap: 5px;
     padding: var(--space-2);
     background: none;
     border: none;
@@ -104,9 +133,10 @@
   }
 
   .menu-line {
-    width: 24px;
+    width: 22px;
     height: 2px;
-    background: var(--night-blue);
+    background: var(--text-primary);
+    border-radius: var(--radius-full);
     transition: all var(--transition-base);
   }
 
@@ -121,11 +151,13 @@
       left: 0;
       right: 0;
       flex-direction: column;
-      background: var(--white);
+      background: rgba(248, 249, 250, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       padding: var(--space-8);
-      gap: var(--space-6);
-      border-bottom: 1px solid var(--silver);
-      transform: translateY(-100%);
+      gap: var(--space-4);
+      border-bottom: 1px solid var(--border);
+      transform: translateY(-120%);
       opacity: 0;
       pointer-events: none;
       transition: all var(--transition-base);
@@ -137,11 +169,15 @@
       pointer-events: all;
     }
 
-    .menu-toggle.active .menu-line:first-child {
+    .menu-toggle.active .menu-line:nth-child(1) {
       transform: rotate(45deg) translate(5px, 5px);
     }
 
-    .menu-toggle.active .menu-line:last-child {
+    .menu-toggle.active .menu-line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle.active .menu-line:nth-child(3) {
       transform: rotate(-45deg) translate(5px, -5px);
     }
   }

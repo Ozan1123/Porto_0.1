@@ -5,8 +5,8 @@ interface Props {
 }
 
 const {
-  title = "M. Fauzan Pratama | Backend Developer & Database Enthusiast",
-  description = "Portfolio website showcasing backend development and database projects by Muhammad Fauzan Pratama",
+  title = "M. Fauzan Pratama | Web & Game Developer",
+  description = "Portfolio of Muhammad Fauzan Pratama — a web & game developer who writes backend, builds games, and occasionally breaks things on purpose.",
 } = Astro.props;
 ---
 
@@ -23,6 +23,9 @@ const {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
 
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <title>{title}</title>
   </head>
